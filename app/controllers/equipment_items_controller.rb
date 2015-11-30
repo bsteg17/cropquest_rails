@@ -1,10 +1,10 @@
 class EquipmentItemsController < ApplicationController
   before_action :set_equipment_item, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_user!
   respond_to :html
 
   def index
-    @equipment_items = EquipmentItem.all
+    @equipment_items = current_user.equipment_items
     respond_with(@equipment_items)
   end
 
