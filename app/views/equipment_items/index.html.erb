@@ -12,6 +12,9 @@
   <tbody>
     <% @equipment_items.each do |equipment_item| %>
       <tr>
+        <td><%= equipment_item.name %></td>
+        <td><%= link_to equipment_item.equipment_type.name, equipment_item.equipment_type %></td>
+        <td><%= equipment_item.purchase_date %></td>
         <td><%= link_to 'Show', equipment_item %></td>
         <td><%= link_to 'Edit', edit_equipment_item_path(equipment_item) %></td>
         <td><%= link_to 'Destroy', equipment_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
