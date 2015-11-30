@@ -1,0 +1,17 @@
+<%= form_for(@edit_profile_redirect) do |f| %>
+  <% if @edit_profile_redirect.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@edit_profile_redirect.errors.count, "error") %> prohibited this edit_profile_redirect from being saved:</h2>
+
+      <ul>
+      <% @edit_profile_redirect.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

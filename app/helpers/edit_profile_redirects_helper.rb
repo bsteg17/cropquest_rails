@@ -1,0 +1,2 @@
+module EditProfileRedirectsHelper
+end
