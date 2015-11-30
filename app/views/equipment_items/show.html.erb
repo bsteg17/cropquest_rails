@@ -1,4 +1,22 @@
-<p id="notice"><%= notice %></p>
+<table>
+  <tbody>
+    <tr>
+      <td>Name:</td><td><%= @equipment_item.name %></td>
+    </tr>
+    <tr>
+      <td>Serial:</td><td><%= @equipment_item.serial %></td>
+    </tr>
+    <tr>
+      <td>Purchase Date:</td><td><%= @equipment_item.purchase_date %></td>
+    </tr>
+    <tr>
+      <td>Comments:</td><td><%= @equipment_item.comments %></td>
+    </tr>
+    <tr>
+      <td>Equipment Type:</td><td><%= @equipment_item.equipment_type.name %></td>
+    </tr>
+  </tbody>
+<table>
 
 <%= link_to 'Edit', edit_equipment_item_path(@equipment_item) %> |
 <%= link_to 'Back', equipment_items_path %>
