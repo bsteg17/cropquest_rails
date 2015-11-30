@@ -27,8 +27,9 @@ class EquipmentItemsController < ApplicationController
   end
 
   def update
-    @equipment_item.update(equipment_item_params)
-    respond_with(@equipment_item)
+    current_user.equipment_items.update(params[:id], equipment_item_params.permit(:name, :serial, :purhase_date, :comments))
+    current_user.save
+    redirect_to equipment_items_path
   end
 
   def destroy

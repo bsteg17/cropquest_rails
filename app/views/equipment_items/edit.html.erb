@@ -1,6 +1,25 @@
-<h1>Editing equipment_item</h1>
+<h1>Editing <%= @equipment_item.name %></h1>
 
-<%= render 'form' %>
+<%= form_for(@equipment_item) do |item| %>
+
+<%= label_tag(:name, "Name:") %>
+<%= item.text_field :name, :value => @equipment_item.name %><br />
+
+<%= label_tag(:serial, "Serial:") %>
+<%= item.text_field :serial, :value => @equipment_item.serial %><br />
+
+<%= label_tag(:purchase_date, "Purchase Date:") %>
+<%= item.date_select :purchase_date, :start_year => 1920 %><br />
+
+<%= label_tag(:comments, "Comments:") %>
+<%= item.text_area :commments, :value => @equipment_item.comments %><br />
+
+<%= label_tag(:equipment_type_id, "Equipment Type:") %>
+<%= item.collection_select( :equipment_type_id, EquipmentType.all, :id, :name ) %><br />
+
+<%= item.submit %>
+
+<% end %>
 
 <%= link_to 'Show', @equipment_item %> |
 <%= link_to 'Back', equipment_items_path %>
