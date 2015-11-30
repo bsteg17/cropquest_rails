@@ -1,4 +1,5 @@
 RailsChallenge::Application.routes.draw do
+  devise_for :users
   resources :equipment_types
 
   resources :equipment_items
