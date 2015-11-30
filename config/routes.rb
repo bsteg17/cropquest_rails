@@ -1,5 +1,7 @@
 RailsChallenge::Application.routes.draw do
-  devise_for :users
+  resources :edit_profile_redirects
+
+  devise_for :users, :controllers => { registrations: 'registration' }
   resources :equipment_types
 
   resources :equipment_items
