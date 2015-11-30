@@ -19,7 +19,7 @@ development:
   encoding: unicode
   database: _rails_challenge_development
   pool: 5
-  host: localhsot
+  host: localhost
   username: benstegeman1
   password: password
 
