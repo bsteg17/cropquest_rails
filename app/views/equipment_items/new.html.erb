@@ -1,5 +1,24 @@
-<h1>New equipment_item</h1>
+<h1>New Item</h1>
 
-<%= render 'form' %>
+<%= form_for(@equipment_item) do |item| %>
+
+<%= label_tag(:name, "Name:") %>
+<%= item.text_field :name, :required => true %><br />
+
+<%= label_tag(:serial, "Serial:") %>
+<%= item.text_field :serial, :required => true %><br />
+
+<%= label_tag(:purchase_date, "Purchase Date:") %>
+<%= item.date_select :purchase_date, :start_year => 1920, :required => true %><br />
+
+<%= label_tag(:comments, "Comments:") %>
+<%= item.text_area :comments, :required => true %><br />
+
+<%= label_tag(:equipment_type_id, "Equipment Type:") %>
+<%= item.collection_select( :equipment_type_id, EquipmentType.all, :id, :name, :required => true ) %><br />
+
+<%= item.submit %>
+
+<% end %>
 
 <%= link_to 'Back', equipment_items_path %>
