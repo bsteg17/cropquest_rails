@@ -1,15 +1,14 @@
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
-    <div class="navbar-header" style="float: left">
-      <a class="navbar-brand" href="/">My Tools</a>
+    <div class="navbar-header" style="width: 100%">
+     <a class="navbar-title" style="float: left;" href="/">InventoryQuest</a>
+     <% if user_signed_in? %>
+       <ul class='nav nav-pills'>
+         <li><%= link_to 'Edit Profile', edit_profile_redirects_path %></li>
+         <li><%= link_to 'Log Out', destroy_user_session_path, :method => 'delete' %></li>
+       <ul>
+     <% end %>
     </div>
-       <div class="dropdown" style="float: right;">
-         <button class="dropdown-toggle" type="button" data-toggle="dropdown"><i class="glyphicon glyphicon-show-lines"></i></button>
-         <ul class="dropdown-menu dropdown-menu-right">
-           <li><a href="#"><%= link_to 'Log Out', destroy_user_session_path, :method => 'delete', class: "navbar-brand" %></a></li>
-           <li><a href="#"><%= link_to 'Edit Profile', edit_profile_redirects_path, class: "navbar-brand" %></a></li>
-        </ul>
-     </div>
   </div>
 </nav>
 
