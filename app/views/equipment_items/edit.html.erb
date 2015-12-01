@@ -1,23 +1,25 @@
-<h1>Editing <%= @equipment_item.name %></h1>
+<h1 class='page-title'>Editing <%= @equipment_item.name %></h1>
+
+<br />
 
 <%= form_for(@equipment_item) do |item| %>
 
 <%= label_tag(:name, "Name:") %>
-<%= item.text_field :name, :value => @equipment_item.name %><br />
+<%= item.text_field :name, :value => @equipment_item.name %><br /><br />
 
 <%= label_tag(:serial, "Serial:") %>
-<%= item.text_field :serial, :value => @equipment_item.serial %><br />
+<%= item.text_field :serial, :value => @equipment_item.serial %><br /><br />
 
 <%= label_tag(:purchase_date, "Purchase Date:") %>
-<%= item.date_select :purchase_date, :start_year => 1920 %><br />
+<%= item.date_select :purchase_date, :start_year => 1920 %><br /><br />
 
 <%= label_tag(:comments, "Comments:") %>
-<%= item.text_area :commments, :value => @equipment_item.comments %><br />
+<%= item.text_area :commments, :value => @equipment_item.comments, style: 'height: 1.7em;' %><br /><br />
 
 <%= label_tag(:equipment_type_id, "Equipment Type:") %>
-<%= item.collection_select( :equipment_type_id, EquipmentType.all, :id, :name ) %><br />
+<%= item.collection_select( :equipment_type_id, EquipmentType.all, :id, :name ) %><br /><br />
 
-<%= item.submit %>
+<%= item.submit "Update", class: 'btn btn-default', style: 'height: 2em' %>
 
 <% end %>
 

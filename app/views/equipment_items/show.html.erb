@@ -1,19 +1,20 @@
-<table>
+<h2 class='page-title'><%= @equipment_item.name %></h2>
+
+<br />
+
+<table class='show-item-table'>
   <tbody>
     <tr>
-      <td>Name:</td><td><%= @equipment_item.name %></td>
+      <td>Serial:</td><td></td><td><%= @equipment_item.serial %></td>
     </tr>
     <tr>
-      <td>Serial:</td><td><%= @equipment_item.serial %></td>
+      <td>Purchase Date:</td><td></td><td><%= @equipment_item.purchase_date %></td>
     </tr>
     <tr>
-      <td>Purchase Date:</td><td><%= @equipment_item.purchase_date %></td>
+      <td>Comments:</td><td></td><td><%= @equipment_item.comments %></td>
     </tr>
     <tr>
-      <td>Comments:</td><td><%= @equipment_item.comments %></td>
-    </tr>
-    <tr>
-      <td>Equipment Type:</td><td><%= @equipment_item.equipment_type.name %></td>
+      <td>Equipment Type:</td><td></td><td><%= @equipment_item.equipment_type.name %></td>
     </tr>
   </tbody>
 <table>
