@@ -1,11 +1,13 @@
-<h2>Sign up</h2>
+<h2 class='page-title'>Sign up</h2>
+
+<br />
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true, :required => true %>
   </div>
 
   <div class="field">
@@ -13,42 +15,42 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", :required => true %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", :required => true %>
   </div>
 
   <div class="field">
     <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autocomplete: "off" %>
+    <%= f.text_field :first_name, autocomplete: "off", :required => true %>
   </div>
 
   <div class="field">
     <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autocomplete: "off" %>
+    <%= f.text_field :last_name, autocomplete: "off", :required => true %>
   </div>
 
   <div class="field">
     <%= f.label :address %><br />
-    <%= f.text_field :address, autocomplete: "off" %>
+    <%= f.text_field :address, autocomplete: "off", :required => true %>
   </div>
 
   <div class="field">
     <%= f.label :city %><br />
-    <%= f.text_field :city, autocomplete: "off" %>
+    <%= f.text_field :city, autocomplete: "off", :required => true %>
   </div>
  
   <div class="field">
     <%= f.label :state %><br />
-    <%= f.text_field :state, autocomplete: "off" %>
+    <%= f.text_field :state, autocomplete: "off", :required => true %>
   </div>
 
   <div class="field">
     <%= f.label :zip %><br />
-    <%= f.text_field :zip, autocomplete: "off" %>
+    <%= f.text_field :zip, autocomplete: "off", :required => true %>
   </div>
 
                     
@@ -58,4 +60,4 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+

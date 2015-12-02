@@ -4,6 +4,7 @@
 
 <div class='table-responsive'>
 <table class='your-inventory'>
+  <% if @equipment_items.size > 0 %>
   <thead>
     <tr class='inventory-headers'>
       <th>Name</th>
@@ -11,6 +12,7 @@
       <th>Purchase Date</th>
     </tr>
   </thead>
+  <% end %>
 
   <tbody>
     <% @equipment_items.each do |equipment_item| %>
