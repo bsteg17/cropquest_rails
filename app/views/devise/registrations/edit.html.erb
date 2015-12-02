@@ -6,33 +6,29 @@
   <%= devise_error_messages! %>
 
   <div class="form-group">
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, :value => current_user.email %>
-  </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
-
+  
   <div class="field">
     <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autocomplete: "off", :value => current_user.first_name %>
+    <%= f.text_field :first_name, autocomplete: "off", :value => current_user.first_name, :required => true  %>
   </div>
 
   <div class="field">
     <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autocomplete: "off", :value => current_user.last_name %>
+    <%= f.text_field :last_name, autocomplete: "off", :value => current_user.last_name, :required => true  %>
   </div>
 
   <div class="field">
     <%= f.label :address %><br />
-    <%= f.text_field :address, autocomplete: "off", :value => current_user.address %>
+    <%= f.text_field :address, autocomplete: "off", :value => current_user.address, :required => true  %>
   </div>
 
   <div class="field">
     <%= f.label :city %><br />
-    <%= f.text_field :city, autocomplete: "off", :value => current_user.city %>
+    <%= f.text_field :city, autocomplete: "off", :value => current_user.city, :required => true  %>
   </div>
  
   <div class="field">
@@ -42,7 +38,7 @@
 
   <div class="field">
     <%= f.label :zip %><br />
-    <%= f.text_field :zip, autocomplete: "off", :value => current_user.zip %>
+    <%= f.text_field :zip, autocomplete: "off", :value => current_user.zip, :required => true %>
   </div>
   </div>
 
@@ -73,7 +69,3 @@
   </div>
   </div>
 <% end %>
-
-<br />
-
-<%= link_to "Back", :back %>

@@ -1,14 +1,12 @@
-<table>
-<tbody>
-<tr>
-<td>Name:</td><td><%= @equipment_type.name %></td>
-</tr>
-<tr>
-<td>Description:</td><td><%= @equipment_type.description %></td>
-</tr>
+<table class='show-item-table'>
+  <tbody>
+    <tr>
+      <td>Name:</td><td></td><td><%= @equipment_type.name %></td>
+    </tr>
+    <tr>
+      <td>Description:</td><td></td><td><%= @equipment_type.description %></td>
+    </tr>
 
 
-</tbody>
+  </tbody>
 </table>
-
-<%= link_to 'Back', equipment_items_path %>

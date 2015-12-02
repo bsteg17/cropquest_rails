@@ -4,7 +4,7 @@ function hideColumns () {
 
   if ($(window).width() < 35*ems) {
     $('.type-column').hide();
-    $('.purchase_date-column').hide();
+    $('.purchase-date-column').hide();
     $('.serial-column').hide();
   }
   else if ($(window).width() < 45*ems) {
@@ -27,6 +27,8 @@ function hideColumns () {
 $(document).on('ready', function () {
 
   ems = parseFloat($('td.name-column').css('font-size'));
+
+  hideColumns();
 
   $(window).on('resize', hideColumns);
 
