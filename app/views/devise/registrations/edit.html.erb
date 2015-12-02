@@ -37,7 +37,7 @@
  
   <div class="field">
     <%= f.label :state %><br />
-    <%= f.text_field :state, autocomplete: "off", :value => current_user.state %>
+    <%= f.select(:state, options_for_select(us_states, current_user.state)) %>
   </div>
 
   <div class="field">

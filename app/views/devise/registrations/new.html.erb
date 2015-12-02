@@ -45,7 +45,7 @@
  
   <div class="field">
     <%= f.label :state %><br />
-    <%= f.text_field :state, autocomplete: "off", :required => true %>
+    <%= f.select(:state, options_for_select(us_states, "KS")) %>
   </div>
 
   <div class="field">

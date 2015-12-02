@@ -1,4 +1,6 @@
 class RegistrationController < Devise::RegistrationsController
+  include StatesHelper
+
 
   private
 
