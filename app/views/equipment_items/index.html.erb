@@ -1,3 +1,5 @@
+<%= javascript_include_tag 'homepage' %>
+
 <h1 class='page-title'>Your Inventory</h1>
 
 <br />
@@ -7,9 +9,10 @@
   <% if @equipment_items.size > 0 %>
   <thead>
     <tr class='inventory-headers'>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Purchase Date</th>
+      <th class="name-column">Name</th>
+      <th class="type-column">Type</th>
+      <th class="purchase-date-column">Purchase Date</th>
+      <th class="serial-column">Serial</th>
     </tr>
   </thead>
   <% end %>
@@ -17,9 +20,10 @@
   <tbody>
     <% @equipment_items.each do |equipment_item| %>
       <tr class='inventory-attribute-values'>
-        <td><%= equipment_item.name %></td>
-        <td><%= link_to equipment_item.equipment_type.name, equipment_item.equipment_type %></td>
-        <td><%= equipment_item.purchase_date %></td>
+        <td class="name-column"><%= equipment_item.name %></td>
+        <td class="type-column"><%= link_to equipment_item.equipment_type.name, equipment_item.equipment_type %></td>
+        <td class="purchase-date-column"><%= equipment_item.purchase_date %></td>
+        <td class="serial-column"><%= equipment_item.serial %></td>
         <td><%= link_to 'Show', equipment_item, class: 'btn btn-default' %></td>
         <td><%= link_to 'Edit', edit_equipment_item_path(equipment_item), class: 'btn btn-default' %></td>
         <td><%= link_to 'Destroy', equipment_item, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %></td>

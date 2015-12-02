@@ -5,16 +5,16 @@
 <%= form_for(@equipment_item) do |item| %>
 
 <%= label_tag(:name, "Name:") %>
-<%= item.text_field :name, :value => @equipment_item.name %><br /><br />
+<%= item.text_field :name, :maxlength => 15, :value => @equipment_item.name %><br /><br />
 
 <%= label_tag(:serial, "Serial:") %>
-<%= item.text_field :serial, :value => @equipment_item.serial %><br /><br />
+<%= item.text_field :serial, :maxlength => 15, :value => @equipment_item.serial %><br /><br />
 
 <%= label_tag(:purchase_date, "Purchase Date:") %>
 <%= item.date_select :purchase_date, :start_year => 1920 %><br /><br />
 
 <%= label_tag(:comments, "Comments:") %>
-<%= item.text_area :commments, :value => @equipment_item.comments, style: 'height: 1.7em;' %><br /><br />
+<%= item.text_area :commments, :maxlength => 2000, :value => @equipment_item.comments, style: 'height: 1.7em;' %><br /><br />
 
 <%= label_tag(:equipment_type_id, "Equipment Type:") %>
 <%= item.collection_select( :equipment_type_id, EquipmentType.all, :id, :name ) %><br /><br />
