@@ -27,7 +27,7 @@ class EquipmentItemsController < ApplicationController
   end
 
   def update
-    current_user.equipment_items.update(params[:id], equipment_item_params.permit(:name, :serial, :purhase_date, :comments))
+    current_user.equipment_items.update(params[:id], equipment_item_params.permit(:name, :serial, :purchase_date, :comments, :equipment_type_id))
     current_user.save
     redirect_to equipment_items_path
   end
